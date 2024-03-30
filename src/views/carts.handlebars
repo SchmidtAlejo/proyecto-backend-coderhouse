@@ -1,0 +1,17 @@
+<h1>Cart</h1>
+<h3>Products added to cart</h3>
+<table>
+  <tr>
+    <th>Product</th>
+    <th>Price</th>
+    <th>Quantity</th>
+  </tr>
+  {{#each products}}
+    <tr>
+      <td>{{this.product.title}}</td>
+      <td>${{this.product.price}}</td>
+      <td>{{this.quantity}}</td>
+    </tr>
+  {{/each}}
+</table>
+<a href="/products">Back</a>
