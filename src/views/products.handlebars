@@ -1,0 +1,11 @@
+<h1>Products</h1>
+<ul>
+  <div id="cartId"></div>
+  {{#each products}}
+    <li id={{this._id}}>{{this.title}}, ${{this.price}}
+    </li>
+  {{/each}}
+</ul>
+<div id="goToCart"></div>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="/js/products.js"></script>
