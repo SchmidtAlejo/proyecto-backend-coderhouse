@@ -1,19 +1,19 @@
-import { modelCart } from '../dao/models/cart.model.js';
+import { modelCart } from './models/cart.model.js';
 
-class CartManager {
+class CartDAO {
 
-    async createCart() {
+    static async createCart() {
         return modelCart.create({
             products: []
         });
     }
 
-    async getProductsByCartId(id) {
+    static async getProductsByCartId(id) {
         const cart = await modelCart.findById(id).populate('products.product').lean();
         return cart.products;
     }
 
-    async addProductToCart(idCart, idProduct, quantity) {
+    static async addProductToCart(idCart, idProduct, quantity) {
         const products = await this.getProductsByCartId(idCart);
         const productExists = products.some(product => product.product._id.toString() === idProduct);
         if (productExists) {
@@ -24,22 +24,22 @@ class CartManager {
             quantity: quantity
         }
         products.push(newProduct);
-        await modelCart.findByIdAndUpdate(idCart, { products });
+        return await modelCart.findByIdAndUpdate(idCart, { products });
     }
 
-    async deleteProductFromCart(idCart, idProduct) {
+    static async deleteProductFromCart(idCart, idProduct) {
         const products = await this.getProductsByCartId(idCart);
         const updatedProducts = products.filter(
             (product) => product.product._id.toString() !== idProduct
         );
-        await modelCart.findByIdAndUpdate(idCart, { products: updatedProducts });
+        return await modelCart.findByIdAndUpdate(idCart, { products: updatedProducts });
     }
 
-    async updateCart(idCart, products) {
-        await modelCart.findByIdAndUpdate(idCart, { products });
+    static async updateCart(idCart, products) {
+        return await modelCart.findByIdAndUpdate(idCart, { products });
     }
 
-    async updateQuantity(idCart, idProduct, quantity) {
+    static async updateQuantity(idCart, idProduct, quantity) {
         const products = await this.getProductsByCartId(idCart);
         const productIndex = products.findIndex(
             (product) => product.product._id.toString() == idProduct
@@ -48,12 +48,12 @@ class CartManager {
             throw new Error('Product not found in cart');
         }
         products[productIndex].quantity = quantity;
-        await modelCart.findByIdAndUpdate(idCart, { products });
+        return await modelCart.findByIdAndUpdate(idCart, { products });
     }
 
-    async deleteProducts(idCart) {
-        await modelCart.findByIdAndUpdate(idCart, { products: [] });
+    static async deleteProducts(idCart) {
+        return await modelCart.findByIdAndUpdate(idCart, { products: [] });
     }
 }
 
-export default CartManager;
+export default CartDAO;

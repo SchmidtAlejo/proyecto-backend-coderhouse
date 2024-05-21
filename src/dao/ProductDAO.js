@@ -1,9 +1,9 @@
-import { modelProduct } from '../dao/models/product.model.js';
+import { modelProduct } from './models/product.model.js';
 import products from '../data/products.js';
 
-class ProductManager {
+class ProductDAO {
 
-    async getProducts(limit, page, category, sort) {
+    static async getProducts(limit, page, category, sort) {
         const q = category ? { category: category } : {};
         return await modelProduct.paginate(q, {
             limit: limit || 10,
@@ -13,35 +13,35 @@ class ProductManager {
         });
     }
 
-    async getProductById(id) {
+    static async getProductById(id) {
         return await modelProduct.findById(id).lean();
     }
 
-    async addProduct({ title, description, price, thumbnail, code, stock }) {
+    static async addProduct({ title, description, price, thumbnail, category, stock }) {
         const product = {
             status: true,
             title,
             description,
             price,
             thumbnail,
-            code,
+            category,
             stock
         }
 
         return await modelProduct.create(product);
     }
 
-    async updateProduct(id, changes) {
+    static async updateProduct(id, changes) {
         return await modelProduct.updateOne({ _id: id }, changes);
     }
 
-    async deleteProduct(id) {
+    static async deleteProduct(id) {
         return await modelProduct.deleteOne({ _id: id });
     }
 
-    async test() {
+    static async test() {
         return await modelProduct.insertMany(products);
     }
 }
 
-export default ProductManager;
+export default ProductDAO;

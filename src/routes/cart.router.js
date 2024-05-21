@@ -1,81 +1,15 @@
-import { Router } from "express";
-import CartManager from "../classes/CartManager.js";
+import CartsController from "../controllers/carts.controller.js";
+import { CustomRouter } from "./routes.js";
 
-const router = Router();
-const cartManager = new CartManager();
-
-router.post("/", async (req, res) => {
-    try {
-        const cart = await cartManager.createCart();
-        res.setHeader('Content-Type', 'application/json');
-        res.status(200).json({ status: "success", cart });
-    } catch (error) {
-        res.status(400).json({ status: "error", "error": error.message });
+export default class CartRouter extends CustomRouter {
+    init() {
+        this.post("/", ['user'], CartsController.createCart);
+        this.get('/:cid', ['user'], CartsController.getCartById);
+        this.post('/:cid/product/:pid', ['user'], CartsController.addProductToCart);
+        this.delete('/:cid/product/:pid', ['user'], CartsController.deleteProductFromCart)
+        this.put('/:cid', ['user'], CartsController.updateCart)
+        this.put('/:cid/product/:pid', ['user'], CartsController.updateQuantity)
+        this.delete('/:cid', ['user'], CartsController.deleteProducts)
+        this.post('/:cid/purchase', ['user'], CartsController.purchase)
     }
-});
-
-router.get("/:cid", async (req, res) => {
-    try {
-        const products = await cartManager.getProductsByCartId(req.params.cid);
-        res.setHeader('Content-Type', 'application/json');
-        res.status(200).json({ status: "success", products });
-    } catch (error) {
-        res.status(400).json({ status: "error", "error": error.message });
-    }
-});
-
-router.post("/:cid/product/:pid", async (req, res) => {
-    try {
-        const cart = await cartManager.addProductToCart(req.params.cid, req.params.pid, req.body.quantity);
-        res.setHeader('Content-Type', 'application/json');
-        res.status(200).json({ status: "success", cart });
-    } catch (error) {
-        res.status(400).json({ status: "error", "error": error.message });
-    }
-});
-
-router.delete("/:cid/product/:pid", async (req, res) => {
-    try {
-        const cart = await cartManager.deleteProductFromCart(req.params.cid, req.params.pid);
-        res.setHeader('Content-Type', 'application/json');
-        res.status(200).json({ status: "success", cart });
-    } catch (error) {
-        res.status(400).json({ status: "error", "error": error.message });
-    }
-})
-
-router.put("/:cid", async (req, res) => {
-    try {
-        await cartManager.updateCart(req.params.cid, req.body.products);
-        res.setHeader('Content-Type', 'application/json');
-        res.status(200).json({ status: "success" });
-    }
-    catch (error) {
-        res.status(400).json({ status: "error", "error": error.message });
-    }
-});
-
-router.put("/:cid/product/:pid", async (req, res) => {
-    try {
-        await cartManager.updateQuantity(req.params.cid, req.params.pid, req.body.quantity);
-        res.setHeader('Content-Type', 'application/json');
-        res.status(200).json({ status: "success" });
-    }
-    catch (error) {
-        res.status(400).json({ status: "error", "error": error.message });
-    }
-})
-
-
-router.delete("/:cid", async (req, res) => {
-    try {
-        await cartManager.deleteProducts(req.params.cid);
-        res.setHeader('Content-Type', 'application/json');
-        res.status(200).json({ status: "success" });
-    }
-    catch (error) {
-        res.status(400).json({ status: "error", "error": error.message });
-    }
-})
-
-export default router;
+}
