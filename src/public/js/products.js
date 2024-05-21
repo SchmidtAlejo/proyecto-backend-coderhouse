@@ -1,4 +1,4 @@
-const listItemsElements = document.getElementsByTagName('li');
+const listItemsElements = document.getElementsByClassName('product');
 const cartIdElement = document.getElementById('cartId');
 const goToCart = document.getElementById('goToCart');
 const API_URL = "http://localhost:8080";
@@ -15,17 +15,18 @@ let cartId = null;
 const createCartElement = document.createElement('button');
 createCartElement.textContent = "Create cart";
 createCartElement.addEventListener('click', () => {
+    ;
     fetch(API_URL + '/api/carts', {
         method: 'POST'
     }).then(res => res.json()).then(data => {
-        cartId = data.cart._id
+        cartId = data.message._id
         const textCartIdElement = document.createElement('h2');
         textCartIdElement.textContent = "Cart ID: " + cartId;
         cartIdElement.appendChild(textCartIdElement);
         cartIdElement.removeChild(createCartElement);
         cartIdElement.removeChild(selectCartElementContainer);
         createGoToCart(cartId);
-    }).catch(err => console.err(err));
+    }).catch(err => console.error(err));
 })
 cartIdElement.appendChild(createCartElement);
 
@@ -76,7 +77,8 @@ for (const li of listItemsElements) {
                 quantity: Number.parseInt(input.value)
             })
         }).then(res => res.json()).then(data => {
-            if (data.status === 'success') {
+            console.log(data);
+            if (data.message._id) {
                 Swal.fire({
                     icon: 'success',
                     title: 'Product added to cart',
