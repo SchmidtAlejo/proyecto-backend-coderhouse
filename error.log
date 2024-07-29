@@ -1,0 +1,136 @@
+error: MongoServerError: E11000 duplicate key error collection: coderBackend.products index: title_1 dup key: { title: "producto Testeo 7" }
+    at InsertOneOperation.execute (C:\Repositorio\Coderhouse\Backend\Desafios\desafio-clase-37\node_modules\mongoose\node_modules\mongodb\lib\operations\insert.js:51:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async executeOperation (C:\Repositorio\Coderhouse\Backend\Desafios\desafio-clase-37\node_modules\mongoose\node_modules\mongodb\lib\operations\execute_operation.js:136:16)
+    at async Collection.insertOne (C:\Repositorio\Coderhouse\Backend\Desafios\desafio-clase-37\node_modules\mongoose\node_modules\mongodb\lib\collection.js:155:16)
+error: MongoServerError: E11000 duplicate key error collection: coderBackend.products index: title_1 dup key: { title: "producto Testeo 7" }
+    at InsertOneOperation.execute (C:\Repositorio\Coderhouse\Backend\Desafios\desafio-clase-37\node_modules\mongoose\node_modules\mongodb\lib\operations\insert.js:51:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async executeOperation (C:\Repositorio\Coderhouse\Backend\Desafios\desafio-clase-37\node_modules\mongoose\node_modules\mongodb\lib\operations\execute_operation.js:136:16)
+    at async Collection.insertOne (C:\Repositorio\Coderhouse\Backend\Desafios\desafio-clase-37\node_modules\mongoose\node_modules\mongodb\lib\collection.js:155:16)
+error: MongoServerError: E11000 duplicate key error collection: coderBackend.products index: title_1 dup key: { title: "producto Testeo 7" }
+    at InsertOneOperation.execute (C:\Repositorio\Coderhouse\Backend\Desafios\desafio-clase-37\node_modules\mongoose\node_modules\mongodb\lib\operations\insert.js:51:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async executeOperation (C:\Repositorio\Coderhouse\Backend\Desafios\desafio-clase-37\node_modules\mongoose\node_modules\mongodb\lib\operations\execute_operation.js:136:16)
+    at async Collection.insertOne (C:\Repositorio\Coderhouse\Backend\Desafios\desafio-clase-37\node_modules\mongoose\node_modules\mongodb\lib\collection.js:155:16)
+error: MulterError: Unexpected field
+    at wrappedFileFilter (C:\Repositorio\Coderhouse\Backend\Desafios\desafio-clase-44\node_modules\multer\index.js:40:19)
+    at Multipart.<anonymous> (C:\Repositorio\Coderhouse\Backend\Desafios\desafio-clase-44\node_modules\multer\lib\make-middleware.js:107:7)
+    at Multipart.emit (node:events:514:28)
+    at HeaderParser.cb (C:\Repositorio\Coderhouse\Backend\Desafios\desafio-clase-44\node_modules\busboy\lib\types\multipart.js:358:14)
+    at HeaderParser.push (C:\Repositorio\Coderhouse\Backend\Desafios\desafio-clase-44\node_modules\busboy\lib\types\multipart.js:162:20)
+    at SBMH.ssCb [as _cb] (C:\Repositorio\Coderhouse\Backend\Desafios\desafio-clase-44\node_modules\busboy\lib\types\multipart.js:394:37)
+    at feed (C:\Repositorio\Coderhouse\Backend\Desafios\desafio-clase-44\node_modules\streamsearch\lib\sbmh.js:219:14)
+    at SBMH.push (C:\Repositorio\Coderhouse\Backend\Desafios\desafio-clase-44\node_modules\streamsearch\lib\sbmh.js:104:16)
+    at Multipart._write (C:\Repositorio\Coderhouse\Backend\Desafios\desafio-clase-44\node_modules\busboy\lib\types\multipart.js:567:19)
+    at writeOrBuffer (node:internal/streams/writable:556:12)
+error: MulterError: Unexpected field
+    at wrappedFileFilter (C:\Repositorio\Coderhouse\Backend\Desafios\desafio-clase-44\node_modules\multer\index.js:40:19)
+    at Multipart.<anonymous> (C:\Repositorio\Coderhouse\Backend\Desafios\desafio-clase-44\node_modules\multer\lib\make-middleware.js:107:7)
+    at Multipart.emit (node:events:514:28)
+    at HeaderParser.cb (C:\Repositorio\Coderhouse\Backend\Desafios\desafio-clase-44\node_modules\busboy\lib\types\multipart.js:358:14)
+    at HeaderParser.push (C:\Repositorio\Coderhouse\Backend\Desafios\desafio-clase-44\node_modules\busboy\lib\types\multipart.js:162:20)
+    at SBMH.ssCb [as _cb] (C:\Repositorio\Coderhouse\Backend\Desafios\desafio-clase-44\node_modules\busboy\lib\types\multipart.js:394:37)
+    at feed (C:\Repositorio\Coderhouse\Backend\Desafios\desafio-clase-44\node_modules\streamsearch\lib\sbmh.js:219:14)
+    at SBMH.push (C:\Repositorio\Coderhouse\Backend\Desafios\desafio-clase-44\node_modules\streamsearch\lib\sbmh.js:104:16)
+    at Multipart._write (C:\Repositorio\Coderhouse\Backend\Desafios\desafio-clase-44\node_modules\busboy\lib\types\multipart.js:567:19)
+    at writeOrBuffer (node:internal/streams/writable:556:12)
+error: MulterError: Unexpected field
+    at wrappedFileFilter (C:\Repositorio\Coderhouse\Backend\Desafios\desafio-clase-44\node_modules\multer\index.js:40:19)
+    at Multipart.<anonymous> (C:\Repositorio\Coderhouse\Backend\Desafios\desafio-clase-44\node_modules\multer\lib\make-middleware.js:107:7)
+    at Multipart.emit (node:events:514:28)
+    at HeaderParser.cb (C:\Repositorio\Coderhouse\Backend\Desafios\desafio-clase-44\node_modules\busboy\lib\types\multipart.js:358:14)
+    at HeaderParser.push (C:\Repositorio\Coderhouse\Backend\Desafios\desafio-clase-44\node_modules\busboy\lib\types\multipart.js:162:20)
+    at SBMH.ssCb [as _cb] (C:\Repositorio\Coderhouse\Backend\Desafios\desafio-clase-44\node_modules\busboy\lib\types\multipart.js:394:37)
+    at feed (C:\Repositorio\Coderhouse\Backend\Desafios\desafio-clase-44\node_modules\streamsearch\lib\sbmh.js:219:14)
+    at SBMH.push (C:\Repositorio\Coderhouse\Backend\Desafios\desafio-clase-44\node_modules\streamsearch\lib\sbmh.js:104:16)
+    at Multipart._write (C:\Repositorio\Coderhouse\Backend\Desafios\desafio-clase-44\node_modules\busboy\lib\types\multipart.js:567:19)
+    at writeOrBuffer (node:internal/streams/writable:556:12)
+error: Error: ENOENT: no such file or directory, open 'C:\Repositorio\Coderhouse\Backend\Desafios\desafio-clase-44\uploads\1720984173694-documento.txt'
+error: undefined
+error: undefined
+error: undefined
+error: Error: ENOENT: no such file or directory, open 'C:\Repositorio\Coderhouse\Backend\proyecto-backend-coderhouse\public\images\1721159241788-750_750-SM-A235_Galaxy_A23_LTE_White_Front.png'
+error: MongoServerError: E11000 duplicate key error collection: coderBackend.products index: title_1 dup key: { title: "producto Testeo 7" }
+    at InsertOneOperation.execute (C:\Repositorio\Coderhouse\Backend\proyecto-backend-coderhouse\node_modules\mongoose\node_modules\mongodb\lib\operations\insert.js:51:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async executeOperation (C:\Repositorio\Coderhouse\Backend\proyecto-backend-coderhouse\node_modules\mongoose\node_modules\mongodb\lib\operations\execute_operation.js:136:16)
+    at async Collection.insertOne (C:\Repositorio\Coderhouse\Backend\proyecto-backend-coderhouse\node_modules\mongoose\node_modules\mongodb\lib\collection.js:155:16)
+error: Error: ENOENT: no such file or directory, open 'C:\Repositorio\Coderhouse\Backend\proyecto-backend-coderhouse\public\images\1721159322450-750_750-SM-A235_Galaxy_A23_LTE_White_Front.png'
+error: Error: ENOENT: no such file or directory, open 'C:\Repositorio\Coderhouse\Backend\proyecto-backend-coderhouse\public\images\1721159335306-750_750-SM-A235_Galaxy_A23_LTE_White_Front.png'
+error: Error: ENOENT: no such file or directory, open 'C:\Repositorio\Coderhouse\Backend\proyecto-backend-coderhouse\public\images\1721159473440-750_750-SM-A235_Galaxy_A23_LTE_White_Front.png'
+error: Error: ENOENT: no such file or directory, open 'C:\Repositorio\Coderhouse\Backend\proyecto-backend-coderhouse\public\images\1721159483297-750_750-SM-A235_Galaxy_A23_LTE_White_Front.png'
+error: Error: ENOENT: no such file or directory, open 'C:\Repositorio\Coderhouse\Backend\proyecto-backend-coderhouse\public\images\1721159496649-750_750-SM-A235_Galaxy_A23_LTE_White_Front.png'
+error: MongoServerError: E11000 duplicate key error collection: coderBackend.products index: title_1 dup key: { title: "producto Testeo 7" }
+    at InsertOneOperation.execute (C:\Repositorio\Coderhouse\Backend\proyecto-backend-coderhouse\node_modules\mongoose\node_modules\mongodb\lib\operations\insert.js:51:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async executeOperation (C:\Repositorio\Coderhouse\Backend\proyecto-backend-coderhouse\node_modules\mongoose\node_modules\mongodb\lib\operations\execute_operation.js:136:16)
+    at async Collection.insertOne (C:\Repositorio\Coderhouse\Backend\proyecto-backend-coderhouse\node_modules\mongoose\node_modules\mongodb\lib\collection.js:155:16)
+error: MongoServerError: E11000 duplicate key error collection: coderBackend.products index: title_1 dup key: { title: "producto Testeo 7" }
+    at InsertOneOperation.execute (C:\Repositorio\Coderhouse\Backend\proyecto-backend-coderhouse\node_modules\mongoose\node_modules\mongodb\lib\operations\insert.js:51:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async executeOperation (C:\Repositorio\Coderhouse\Backend\proyecto-backend-coderhouse\node_modules\mongoose\node_modules\mongodb\lib\operations\execute_operation.js:136:16)
+    at async Collection.insertOne (C:\Repositorio\Coderhouse\Backend\proyecto-backend-coderhouse\node_modules\mongoose\node_modules\mongodb\lib\collection.js:155:16)
+error: One or more properties of the product are missing or not valid: 
+  List of required properties:
+  * title: requiered, unique, needs to be a string, received undefined
+  * price: requiered, needs to be a number, received undefined
+  * description: requiered, needs to be a string, received undefined
+  * category: requiered, needs to be a string, received undefined
+  * stock: requiered, needs to be a number, received undefined
+  * thumbnails: optional, needs to be a string, received undefined
+  
+error: MongoServerError: E11000 duplicate key error collection: coderBackend.products index: title_1 dup key: { title: "producto Testeo 7" }
+    at InsertOneOperation.execute (C:\Repositorio\Coderhouse\Backend\proyecto-backend-coderhouse\node_modules\mongoose\node_modules\mongodb\lib\operations\insert.js:51:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async executeOperation (C:\Repositorio\Coderhouse\Backend\proyecto-backend-coderhouse\node_modules\mongoose\node_modules\mongodb\lib\operations\execute_operation.js:136:16)
+    at async Collection.insertOne (C:\Repositorio\Coderhouse\Backend\proyecto-backend-coderhouse\node_modules\mongoose\node_modules\mongodb\lib\collection.js:155:16)
+error: MongoServerError: E11000 duplicate key error collection: coderBackend.products index: title_1 dup key: { title: "producto Testeo 7" }
+    at InsertOneOperation.execute (C:\Repositorio\Coderhouse\Backend\proyecto-backend-coderhouse\node_modules\mongoose\node_modules\mongodb\lib\operations\insert.js:51:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async executeOperation (C:\Repositorio\Coderhouse\Backend\proyecto-backend-coderhouse\node_modules\mongoose\node_modules\mongodb\lib\operations\execute_operation.js:136:16)
+    at async Collection.insertOne (C:\Repositorio\Coderhouse\Backend\proyecto-backend-coderhouse\node_modules\mongoose\node_modules\mongodb\lib\collection.js:155:16)
+error: Error: Missing helper: "eq"
+    at Object.<anonymous> (C:\Repositorio\Coderhouse\Backend\proyecto-backend-coderhouse\node_modules\handlebars\dist\cjs\handlebars\helpers\helper-missing.js:19:13)
+    at Object.wrapper (C:\Repositorio\Coderhouse\Backend\proyecto-backend-coderhouse\node_modules\handlebars\dist\cjs\handlebars\internal\wrapHelper.js:15:19)
+    at eval (eval at createFunctionContext (C:\Repositorio\Coderhouse\Backend\proyecto-backend-coderhouse\node_modules\handlebars\dist\cjs\handlebars\compiler\javascript-compiler.js:262:23), <anonymous>:21:139)
+    at prog (C:\Repositorio\Coderhouse\Backend\proyecto-backend-coderhouse\node_modules\handlebars\dist\cjs\handlebars\runtime.js:268:12)
+    at execIteration (C:\Repositorio\Coderhouse\Backend\proyecto-backend-coderhouse\node_modules\handlebars\dist\cjs\handlebars\helpers\each.js:51:19)
+    at Object.<anonymous> (C:\Repositorio\Coderhouse\Backend\proyecto-backend-coderhouse\node_modules\handlebars\dist\cjs\handlebars\helpers\each.js:61:13)
+    at Object.wrapper (C:\Repositorio\Coderhouse\Backend\proyecto-backend-coderhouse\node_modules\handlebars\dist\cjs\handlebars\internal\wrapHelper.js:15:19)
+    at Object.eval [as main] (eval at createFunctionContext (C:\Repositorio\Coderhouse\Backend\proyecto-backend-coderhouse\node_modules\handlebars\dist\cjs\handlebars\compiler\javascript-compiler.js:262:23), <anonymous>:11:49)
+    at main (C:\Repositorio\Coderhouse\Backend\proyecto-backend-coderhouse\node_modules\handlebars\dist\cjs\handlebars\runtime.js:208:32)
+    at ret (C:\Repositorio\Coderhouse\Backend\proyecto-backend-coderhouse\node_modules\handlebars\dist\cjs\handlebars\runtime.js:212:12)
+error: TypeError: ((depth0 && lookupProperty(...)) || alias4).call is not a function
+    at eval (eval at createFunctionContext (C:\Repositorio\Coderhouse\Backend\proyecto-backend-coderhouse\node_modules\handlebars\dist\cjs\handlebars\compiler\javascript-compiler.js:262:23), <anonymous>:21:111)
+    at prog (C:\Repositorio\Coderhouse\Backend\proyecto-backend-coderhouse\node_modules\handlebars\dist\cjs\handlebars\runtime.js:268:12)
+    at execIteration (C:\Repositorio\Coderhouse\Backend\proyecto-backend-coderhouse\node_modules\handlebars\dist\cjs\handlebars\helpers\each.js:51:19)
+    at Object.<anonymous> (C:\Repositorio\Coderhouse\Backend\proyecto-backend-coderhouse\node_modules\handlebars\dist\cjs\handlebars\helpers\each.js:61:13)
+    at Object.wrapper (C:\Repositorio\Coderhouse\Backend\proyecto-backend-coderhouse\node_modules\handlebars\dist\cjs\handlebars\internal\wrapHelper.js:15:19)
+    at Object.eval [as main] (eval at createFunctionContext (C:\Repositorio\Coderhouse\Backend\proyecto-backend-coderhouse\node_modules\handlebars\dist\cjs\handlebars\compiler\javascript-compiler.js:262:23), <anonymous>:11:49)
+    at main (C:\Repositorio\Coderhouse\Backend\proyecto-backend-coderhouse\node_modules\handlebars\dist\cjs\handlebars\runtime.js:208:32)
+    at ret (C:\Repositorio\Coderhouse\Backend\proyecto-backend-coderhouse\node_modules\handlebars\dist\cjs\handlebars\runtime.js:212:12)
+    at ret (C:\Repositorio\Coderhouse\Backend\proyecto-backend-coderhouse\node_modules\handlebars\dist\cjs\handlebars\compiler\compiler.js:519:21)
+    at ExpressHandlebars._renderTemplate (C:\Repositorio\Coderhouse\Backend\proyecto-backend-coderhouse\node_modules\express-handlebars\dist\express-handlebars.js:244:16)
+error: TypeError: ((depth0 && lookupProperty(...)) || alias4).call is not a function
+    at eval (eval at createFunctionContext (C:\Repositorio\Coderhouse\Backend\proyecto-backend-coderhouse\node_modules\handlebars\dist\cjs\handlebars\compiler\javascript-compiler.js:262:23), <anonymous>:21:111)
+    at prog (C:\Repositorio\Coderhouse\Backend\proyecto-backend-coderhouse\node_modules\handlebars\dist\cjs\handlebars\runtime.js:268:12)
+    at execIteration (C:\Repositorio\Coderhouse\Backend\proyecto-backend-coderhouse\node_modules\handlebars\dist\cjs\handlebars\helpers\each.js:51:19)
+    at Object.<anonymous> (C:\Repositorio\Coderhouse\Backend\proyecto-backend-coderhouse\node_modules\handlebars\dist\cjs\handlebars\helpers\each.js:61:13)
+    at Object.wrapper (C:\Repositorio\Coderhouse\Backend\proyecto-backend-coderhouse\node_modules\handlebars\dist\cjs\handlebars\internal\wrapHelper.js:15:19)
+    at Object.eval [as main] (eval at createFunctionContext (C:\Repositorio\Coderhouse\Backend\proyecto-backend-coderhouse\node_modules\handlebars\dist\cjs\handlebars\compiler\javascript-compiler.js:262:23), <anonymous>:11:49)
+    at main (C:\Repositorio\Coderhouse\Backend\proyecto-backend-coderhouse\node_modules\handlebars\dist\cjs\handlebars\runtime.js:208:32)
+    at ret (C:\Repositorio\Coderhouse\Backend\proyecto-backend-coderhouse\node_modules\handlebars\dist\cjs\handlebars\runtime.js:212:12)
+    at ret (C:\Repositorio\Coderhouse\Backend\proyecto-backend-coderhouse\node_modules\handlebars\dist\cjs\handlebars\compiler\compiler.js:519:21)
+    at ExpressHandlebars._renderTemplate (C:\Repositorio\Coderhouse\Backend\proyecto-backend-coderhouse\node_modules\express-handlebars\dist\express-handlebars.js:244:16)
+error: Error: Missing helper: "eq"
+    at Object.<anonymous> (C:\Repositorio\Coderhouse\Backend\proyecto-backend-coderhouse\node_modules\handlebars\dist\cjs\handlebars\helpers\helper-missing.js:19:13)
+    at Object.wrapper (C:\Repositorio\Coderhouse\Backend\proyecto-backend-coderhouse\node_modules\handlebars\dist\cjs\handlebars\internal\wrapHelper.js:15:19)
+    at eval (eval at createFunctionContext (C:\Repositorio\Coderhouse\Backend\proyecto-backend-coderhouse\node_modules\handlebars\dist\cjs\handlebars\compiler\javascript-compiler.js:262:23), <anonymous>:21:139)
+    at prog (C:\Repositorio\Coderhouse\Backend\proyecto-backend-coderhouse\node_modules\handlebars\dist\cjs\handlebars\runtime.js:268:12)
+    at execIteration (C:\Repositorio\Coderhouse\Backend\proyecto-backend-coderhouse\node_modules\handlebars\dist\cjs\handlebars\helpers\each.js:51:19)
+    at Object.<anonymous> (C:\Repositorio\Coderhouse\Backend\proyecto-backend-coderhouse\node_modules\handlebars\dist\cjs\handlebars\helpers\each.js:61:13)
+    at Object.wrapper (C:\Repositorio\Coderhouse\Backend\proyecto-backend-coderhouse\node_modules\handlebars\dist\cjs\handlebars\internal\wrapHelper.js:15:19)
+    at Object.eval [as main] (eval at createFunctionContext (C:\Repositorio\Coderhouse\Backend\proyecto-backend-coderhouse\node_modules\handlebars\dist\cjs\handlebars\compiler\javascript-compiler.js:262:23), <anonymous>:11:49)
+    at main (C:\Repositorio\Coderhouse\Backend\proyecto-backend-coderhouse\node_modules\handlebars\dist\cjs\handlebars\runtime.js:208:32)
+    at ret (C:\Repositorio\Coderhouse\Backend\proyecto-backend-coderhouse\node_modules\handlebars\dist\cjs\handlebars\runtime.js:212:12)

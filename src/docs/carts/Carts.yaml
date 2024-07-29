@@ -1,0 +1,128 @@
+paths:
+  api/{cid}/product/{pid}:
+    post:
+      summary: Add a product to a Cart
+      description: Add a product to a Cart
+      tags:
+        - Carts
+      parameters:
+        - in: path
+          name: cid
+          schema:
+            type: string
+          required: true
+          description: Cart id
+        - in: path
+          name: pid
+          schema:
+            type: string
+          required: true
+          description: Product id
+      requestBody:
+        description: Quantity
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                quantity:
+                  type: number
+                  description: Quantity
+                  example: 1
+      responses:
+        200:
+          description: Product added to Cart
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CartResponse"
+        400:
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        404:
+          description: Cart or Product not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        500:
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+components:
+  schemas:
+    Cart:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Cart id
+          example: 63c41149d4490228098080
+        products:
+          type: array
+          items:
+            type: object
+            properties:
+              product:
+                type: string
+              quantity:
+                type: number
+                description: Quantity
+                example: 1
+    CartResponse:
+      type: object
+      properties:
+        message:
+          type: array
+          items:
+            type: object
+            properties:
+              product:
+                type: string
+                description: Product id
+                example: 63c41149d4490228098080
+              quantity:
+                type: number
+                description: Quantity
+                example: 1
+    Product:
+      type: object
+      required:
+        - id
+        - title
+        - price
+        - description
+        - thumbnail
+        - category
+        - stock
+        - owner
+      properties:
+        id:
+          type: string
+        title:
+          type: string
+        price:
+          type: number
+        description:
+          type: string
+        category:
+          type: string
+        thumbnail:
+          type: string
+        stock:
+          type: number
+        owner:
+          type: string
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+  security:
+    - bearerAuth: []

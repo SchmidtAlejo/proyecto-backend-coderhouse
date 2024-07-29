@@ -8,7 +8,6 @@ Swal.fire({
     allowOutsideClick: false
 })
     .then(data => {
-        console.log(data)
         let name = data.value
 
         let inputMessages = document.getElementById("message")
@@ -20,7 +19,6 @@ Swal.fire({
         socket.emit("welcome", name)
 
         socket.on("record", messages => {
-            console.log(messages);
             messages.forEach(m => {
                 divMessages.innerHTML += `<div class="message"><strong>${m.name}</strong>: <i>${m.message}</i></div><br>`
             })
@@ -44,7 +42,6 @@ Swal.fire({
 
         inputMessages.addEventListener("keyup", e => {
             e.preventDefault()
-            // console.log(e, e.target.value)
             if (e.code === "Enter" && e.target.value.trim().length > 0) {
                 socket.emit("message", name, e.target.value.trim())
                 e.target.value = ""

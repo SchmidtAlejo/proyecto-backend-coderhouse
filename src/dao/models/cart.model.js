@@ -11,7 +11,8 @@ const schema = new mongoose.Schema(
                 }
             ],
             default: []
-        }
+        },
+        user: { type: mongoose.Schema.Types.ObjectId, ref: "users", required: true },
     },
     {
         timestamps: true, strict: false

@@ -1,28 +1,16 @@
-import { Router } from "express";
-import ProductManager from '../classes/ProductManager.js'
-import CartManager from '../classes/CartManager.js'
-
-const router = Router();
-
-router.get("/", async (req, res) => {
-    res.render('index');
-});
-
-router.get("/chat", async (req, res) => {
-    res.render('chat');
-});
-
-router.get("/products", async (req, res) => {
-    const productManager = new ProductManager();
-    const { docs } = await productManager.getProducts();
-    res.render('products', { products: docs });
-});
-
-router.get("/carts/:cid", async (req, res) => {
-    const cartManager = new CartManager();
-    const products = await cartManager.getProductsByCartId(req.params.cid);
-    console.log(products);
-    res.render('carts', { products: products });
-});
-
-export default router;
+import ViewsController from "../controllers/views.controller.js";
+import { CustomRouter } from "./routes.js";
+export default class ViewsRouter extends CustomRouter {
+  init() {
+    this.get("/", ['public'], ViewsController.index);
+    this.get("/chat", ['public'], ViewsController.chat);
+    this.get("/products", ['authenticated'], ViewsController.products);
+    this.get("/carts/:cid", ['user'], ViewsController.carts);
+    this.get('/signup', ['public'], ViewsController.signup);
+    this.get('/login', ['public'], ViewsController.login);
+    this.get('/401', ['public'], ViewsController.error401);
+    this.get('/forgot-password', ['public'], ViewsController.error401);
+    this.get('/reset-password/:token', ['public'], ViewsController.resetPassword);
+    this.get('/admin/users', ['admin'], ViewsController.adminUsers);
+  }
+}

@@ -5,7 +5,8 @@ const products = [
         price: 20000000,
         thumbnail: "",
         category: "smartphones",
-        stock: 25
+        stock: 25,
+        owner: "662ed6586252f849ea859a9a"
     },
     {
         title: "Apple MacBook Pro",
@@ -13,7 +14,8 @@ const products = [
         price: 35000000,
         thumbnail: "",
         category: "laptops",
-        stock: 15
+        stock: 15,
+        owner: "662ed6586252f849ea859a9a"
     },
     {
         title: "Sony PlayStation 5",
@@ -21,7 +23,8 @@ const products = [
         price: 45000000,
         thumbnail: "",
         category: "gaming",
-        stock: 10
+        stock: 10,
+        owner: "662ed6586252f849ea859a9a"
     },
     {
         title: "Samsung 4K QLED TV",
@@ -29,7 +32,8 @@ const products = [
         price: 60000000,
         thumbnail: "",
         category: "televisions",
-        stock: 8
+        stock: 8,
+        owner: "662ed6586252f849ea859a9a"
     },
     {
         title: "Nikon D850 DSLR Camera",
@@ -37,7 +41,8 @@ const products = [
         price: 70000000,
         thumbnail: "",
         category: "cameras",
-        stock: 12
+        stock: 12,
+        owner: "662ed6586252f849ea859a9a"
     },
     {
         title: "Google Pixel 6",
@@ -45,7 +50,8 @@ const products = [
         price: 22000000,
         thumbnail: "",
         category: "smartphones",
-        stock: 30
+        stock: 30,
+        owner: "662ed6586252f849ea859a9a"
     },
     {
         title: "Dell XPS 13",
@@ -53,7 +59,8 @@ const products = [
         price: 40000000,
         thumbnail: "",
         category: "laptops",
-        stock: 20
+        stock: 20,
+        owner: "662ed6586252f849ea859a9a"
     },
     {
         title: "Sony PlayStation 5 Pro",
@@ -61,7 +68,8 @@ const products = [
         price: 55000000,
         thumbnail: "",
         category: "gaming",
-        stock: 15
+        stock: 15,
+        owner: "662ed6586252f849ea859a9a"
     },
     {
         title: "LG OLED 4K TV",
@@ -69,7 +77,8 @@ const products = [
         price: 70000000,
         thumbnail: "",
         category: "televisions",
-        stock: 10
+        stock: 10,
+        owner: "662ed6586252f849ea859a9a"
     },
     {
         title: "Canon EOS R5 Mirrorless Camera",
@@ -77,7 +86,8 @@ const products = [
         price: 75000000,
         thumbnail: "",
         category: "cameras",
-        stock: 18
+        stock: 18,
+        owner: "662ed6586252f849ea859a9a"
     },
     {
         title: "OnePlus 9T",
@@ -85,7 +95,8 @@ const products = [
         price: 23000000,
         thumbnail: "",
         category: "smartphones",
-        stock: 25
+        stock: 25,
+        owner: "662ed6586252f849ea859a9a"
     },
     {
         title: "HP Spectre x360",
@@ -93,7 +104,8 @@ const products = [
         price: 38000000,
         thumbnail: "",
         category: "laptops",
-        stock: 18
+        stock: 18,
+        owner: "662ed6586252f849ea859a9a"
     },
     {
         title: "Nintendo Switch OLED",
@@ -101,7 +113,8 @@ const products = [
         price: 33000000,
         thumbnail: "",
         category: "gaming",
-        stock: 20
+        stock: 20,
+        owner: "662ed6586252f849ea859a9a"
     },
     {
         title: "Sony BRAVIA XR A80J",
@@ -109,7 +122,8 @@ const products = [
         price: 68000000,
         thumbnail: "",
         category: "televisions",
-        stock: 15
+        stock: 15,
+        owner: "662ed6586252f849ea859a9a"
     },
     {
         title: "Fujifilm X-T4 Mirrorless Camera",
@@ -117,7 +131,8 @@ const products = [
         price: 80000000,
         thumbnail: "",
         category: "cameras",
-        stock: 12
+        stock: 12,
+        owner: "662ed6586252f849ea859a9a"
     },
     {
         title: "Xiaomi Redmi Note 11",
@@ -125,7 +140,8 @@ const products = [
         price: 18000000,
         thumbnail: "",
         category: "smartphones",
-        stock: 22
+        stock: 22,
+        owner: "662ed6586252f849ea859a9a"
     },
     {
         title: "Lenovo Yoga C940",
@@ -133,7 +149,8 @@ const products = [
         price: 42000000,
         thumbnail: "",
         category: "laptops",
-        stock: 14
+        stock: 14,
+        owner: "662ed6586252f849ea859a9a"
     },
     {
         title: "PlayStation 5 Slim",
@@ -141,7 +158,8 @@ const products = [
         price: 50000000,
         thumbnail: "",
         category: "gaming",
-        stock: 16
+        stock: 16,
+        owner: "662ed6586252f849ea859a9a"
     },
     {
         title: "Samsung Neo QLED QN90A",
@@ -149,7 +167,8 @@ const products = [
         price: 75000000,
         thumbnail: "",
         category: "televisions",
-        stock: 8
+        stock: 8,
+        owner: "662ed6586252f849ea859a9a"
     },
     {
         title: "Nikon Z7 II Mirrorless Camera",
@@ -157,7 +176,8 @@ const products = [
         price: 90000000,
         thumbnail: "",
         category: "cameras",
-        stock: 10
+        stock: 10,
+        owner: "662ed6586252f849ea859a9a"
     },
     {
         title: "Google Pixel 6 Pro",
@@ -165,7 +185,8 @@ const products = [
         price: 27000000,
         thumbnail: "",
         category: "smartphones",
-        stock: 28
+        stock: 28,
+        owner: "662ed6586252f849ea859a9a"
     },
     {
         title: "Asus ROG Zephyrus G14",
@@ -173,7 +194,8 @@ const products = [
         price: 45000000,
         thumbnail: "",
         category: "laptops",
-        stock: 17
+        stock: 17,
+        owner: "662ed6586252f849ea859a9a"
     },
     {
         title: "Xbox Series X",
@@ -181,7 +203,8 @@ const products = [
         price: 55000000,
         thumbnail: "",
         category: "gaming",
-        stock: 13
+        stock: 13,
+        owner: "662ed6586252f849ea859a9a"
     },
     {
         title: "LG NanoCell 8K TV",
@@ -189,7 +212,8 @@ const products = [
         price: 85000000,
         thumbnail: "",
         category: "televisions",
-        stock: 9
+        stock: 9,
+        owner: "662ed6586252f849ea859a9a"
     },
     {
         title: "Canon EOS 5D Mark IV",
@@ -197,7 +221,8 @@ const products = [
         price: 120000000,
         thumbnail: "",
         category: "cameras",
-        stock: 11
+        stock: 11,
+        owner: "662ed6586252f849ea859a9a"
     },
     {
         title: "Samsung Galaxy Z Fold 3",
@@ -205,7 +230,8 @@ const products = [
         price: 35000000,
         thumbnail: "",
         category: "smartphones",
-        stock: 20
+        stock: 20,
+        owner: "662ed6586252f849ea859a9a"
     },
     {
         title: "Apple MacBook Air",
@@ -213,7 +239,8 @@ const products = [
         price: 32000000,
         thumbnail: "",
         category: "laptops",
-        stock: 19
+        stock: 19,
+        owner: "662ed6586252f849ea859a9a"
     },
     {
         title: "Nintendo Switch Lite",
@@ -221,7 +248,8 @@ const products = [
         price: 25000000,
         thumbnail: "",
         category: "gaming",
-        stock: 24
+        stock: 24,
+        owner: "662ed6586252f849ea859a9a"
     },
     {
         title: "Sony X950H 4K TV",
@@ -229,7 +257,8 @@ const products = [
         price: 72000000,
         thumbnail: "",
         category: "televisions",
-        stock: 14
+        stock: 14,
+        owner: "662ed6586252f849ea859a9a"
     },
     {
         title: "Panasonic Lumix GH5 Mirrorless Camera",
@@ -237,7 +266,8 @@ const products = [
         price: 95000000,
         thumbnail: "",
         category: "cameras",
-        stock: 7
+        stock: 7,
+        owner: "662ed6586252f849ea859a9a"
     }
 ];
 

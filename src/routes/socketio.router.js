@@ -1,7 +1,5 @@
 import express from 'express';
-import MessageManager from '../classes/MessageManager.js';
-
-const messageManager = new MessageManager();
+import MessageService from '../services/messages.service.js';
 
 const socketioRouter = (io) => {
     const router = express.Router();
@@ -13,12 +11,12 @@ const socketioRouter = (io) => {
 
         socket.on("welcome", async name => {
             users.push({ id: socket.id, name: name })
-            socket.emit("record", await messageManager.getMessages());
+            socket.emit("record", await MessageService.getMessages());
             socket.broadcast.emit("newUser", name)
         })
 
         socket.on("message", async (name, message) => {
-            await messageManager.createMessage(name, message);
+            await MessageService.createMessage(name, message);
             io.emit("newMessage", name, message)
         })
 

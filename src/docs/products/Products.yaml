@@ -1,0 +1,137 @@
+paths:
+  /api/products:
+    get:
+      summary: Get all products
+      description: Get a list of all products
+      tags:
+        - Products
+      parameters:
+        - in: query
+          name: limit
+          required: false
+          type: number
+        - in: query
+          name: page
+          required: false
+          type: number
+        - in: query
+          name: category
+          required: false
+          type: string
+        - in: query
+          name: sort
+          required: false
+          description: 1 to order ascendent, -1 to order descendent
+          type: number
+      responses:
+        200:
+          description: A list of products
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: object
+                    properties:
+                      status:
+                       type: string
+                       example: success
+                      payload:
+                        type: array
+                        items:
+                          $ref: "#/components/schemas/Product"
+                      totalPages:
+                        type: string
+                      prevPage:
+                        type: string
+                      nextPage:
+                        type: string
+                      page:
+                        type: string
+                      hasPrevPage:
+                        type: boolean
+                      prevlink: 
+                       type: string
+                      nextLink: 
+                       type: string
+        400:
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        500:
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+    post:
+      summary: Create a new product
+      description: Create a new product
+      tags:
+        - Products
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Product"
+      responses:
+        201:
+          description: Created
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: object
+                    $ref: "#/components/schemas/Product"
+        400:
+          description: Bad Request
+        500:
+          description: Internal Server Error
+components:
+  schemas:
+    Product:
+      type: object
+      required:
+        - id
+        - title
+        - price
+        - description
+        - thumbnail
+        - category
+        - stock
+        - owner
+      properties:
+        id:
+          type: string
+        title:
+          type: string
+        price:
+          type: number
+        description:
+          type: string
+        category:
+          type: string
+        thumbnail:
+          type: string
+        stock:
+          type: number
+        owner:
+          type: string
+    Error:
+      type: object
+      properties:
+        error:
+          type: string
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+  security:
+    - bearerAuth: []
