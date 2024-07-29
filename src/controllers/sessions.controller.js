@@ -3,6 +3,7 @@ import passport from 'passport';
 import UserDTO from '../dao/dto/user.dto.js'
 import UserDAO from '../dao/UserDAO.js'
 import bcrypt from "bcrypt";
+import { config } from '../config/config.js';
 
 class SessionsController {
   static login = (req, res, next) => {
@@ -99,7 +100,7 @@ class SessionsController {
 
     const token = generateToken(user);
 
-    const resetUrl = `http://localhost:8080/reset-password/${token}`;
+    const resetUrl = `${config.API_URL}/reset-password/${token}`;
 
     transporter.sendMail({
       to: user.email,
@@ -136,7 +137,7 @@ class SessionsController {
     if (isSamePassword) {
       return res.status(400).send(`
         <h1>No puedes usar la misma contraseña</h1>
-        <a href="http://localhost:8080/forgot-password">Restablece la contraseña</a>
+        <a href="${config.API_URL}/forgot-password">Restablece la contraseña</a>
         `);
     }
 

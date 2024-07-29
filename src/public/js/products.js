@@ -1,7 +1,8 @@
+import { config } from "../../config/config";
+
 const listItemsElements = document.getElementsByClassName('product');
 const cartIdElement = document.getElementById('cartId');
 const goToCart = document.getElementById('goToCart');
-const API_URL = "http://localhost:8080";
 
 const createGoToCart = (id) => {
     const a = document.createElement('a');
@@ -16,7 +17,7 @@ const createCartElement = document.createElement('button');
 createCartElement.textContent = "Create cart";
 createCartElement.addEventListener('click', () => {
     ;
-    fetch(API_URL + '/api/carts', {
+    fetch(config.API_URL + '/api/carts', {
         method: 'POST'
     }).then(res => res.json()).then(data => {
         cartId = data.message._id
