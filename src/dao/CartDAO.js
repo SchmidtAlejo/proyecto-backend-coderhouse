@@ -1,19 +1,11 @@
 import { modelCart } from './models/cart.model.js';
-import { modelTicket } from './models/tieckt.model.js';
-
-import ProductDao from './ProductDAO.js'
 
 class CartDAO {
 
-    static async createCart(uid) {
-        return await modelCart.create({
-            products: [],
-            user: uid
+    static async createCart() {
+        return modelCart.create({
+            products: []
         });
-    }
-
-    static async getCartById(id) {
-        return await modelCart.findById(id).populate('products.product').lean();
     }
 
     static async getProductsByCartId(id) {
@@ -22,15 +14,8 @@ class CartDAO {
     }
 
     static async addProductToCart(idCart, idProduct, quantity) {
-        const cart = await this.getCartById(idCart);
-        const product = await ProductDao.getProductById(idProduct);
-        if (!product) throw new Error('Product not found');
-        if (product.stock < quantity) throw new Error('Not enough stock');
-        const productExists = cart.products.some(product => product.product._id.toString() === idProduct);
-        if (quantity <= 0 || !quantity) throw new Error('Quantity must be greater than 0');
-        if (cart.user.toString() === product.owner.toString()) {
-            throw new Error('You cannot add your own product to your cart');
-        }
+        const products = await this.getProductsByCartId(idCart);
+        const productExists = products.some(product => product.product._id.toString() === idProduct);
         if (productExists) {
             throw new Error('Product already exists in cart');
         }
@@ -38,9 +23,8 @@ class CartDAO {
             product: idProduct,
             quantity: quantity
         }
-        cart.products.push(newProduct);
-        await modelCart.findByIdAndUpdate(idCart, { products: cart.products })
-        return newProduct;
+        products.push(newProduct);
+        return await modelCart.findByIdAndUpdate(idCart, { products });
     }
 
     static async deleteProductFromCart(idCart, idProduct) {
@@ -69,11 +53,6 @@ class CartDAO {
 
     static async deleteProducts(idCart) {
         return await modelCart.findByIdAndUpdate(idCart, { products: [] });
-    }
-
-    static async deleteAllCarts() {
-        await modelTicket.deleteMany({})
-        return await modelCart.deleteMany({})
     }
 }
 

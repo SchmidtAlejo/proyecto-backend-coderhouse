@@ -5,7 +5,6 @@ dotenv.config(
     path: "./.env",
     override: true
   }
-
 )
 
 export const config = {
