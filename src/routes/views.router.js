@@ -5,7 +5,7 @@ export default class ViewsRouter extends CustomRouter {
     this.get("/", ['public'], ViewsController.index);
     this.get("/chat", ['public'], ViewsController.chat);
     this.get("/products", ['authenticated'], ViewsController.products);
-    this.get("/carts/:cid", ['user'], ViewsController.carts);
+    this.get("/carts/:cid", ['user', "premium"], ViewsController.carts);
     this.get('/signup', ['public'], ViewsController.signup);
     this.get('/login', ['public'], ViewsController.login);
     this.get('/401', ['public'], ViewsController.error401);

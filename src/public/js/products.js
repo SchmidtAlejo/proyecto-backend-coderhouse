@@ -77,7 +77,6 @@ for (const li of listItemsElements) {
                 quantity: Number.parseInt(input.value)
             })
         }).then(res => res.json()).then(data => {
-            console.log(!data.error);
             if (!data.error && data.message.product) {
                 Swal.fire({
                     icon: 'success',

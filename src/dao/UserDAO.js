@@ -23,7 +23,6 @@ export default class UserDAO {
     }
 
     static async updateUser(userId, user) {
-        console.log(user);
         return await modelUser.findByIdAndUpdate(userId, user).lean()
     }
 

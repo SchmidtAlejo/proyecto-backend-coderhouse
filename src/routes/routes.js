@@ -111,7 +111,6 @@ export class CustomRouter {
       if (permisos.includes("authenticated")) {
         return next();
       }
-
       if (!permisos.includes(user.role.toLowerCase())) {
         return res.error403("No tiene privilegios suficientes para acceder al recurso solicitado")
       }

@@ -1,11 +1,17 @@
 import { modelCart } from './models/cart.model.js';
+import ProductDao from './ProductDAO.js'
 
 class CartDAO {
 
-    static async createCart() {
-        return modelCart.create({
-            products: []
+    static async createCart(uid) {
+        return await modelCart.create({
+            products: [],
+            user: uid
         });
+    }
+
+    static async getCartById(id) {
+        return await modelCart.findById(id).populate('products.product').lean();
     }
 
     static async getProductsByCartId(id) {
@@ -14,8 +20,14 @@ class CartDAO {
     }
 
     static async addProductToCart(idCart, idProduct, quantity) {
-        const products = await this.getProductsByCartId(idCart);
-        const productExists = products.some(product => product.product._id.toString() === idProduct);
+        const cart = await this.getCartById(idCart);
+        const product = await ProductDao.getProductById(idProduct);
+        if (!product) throw new Error('Product not found');
+        if (product.stock < quantity) throw new Error('Not enough stock');
+        const productExists = cart.products.some(product => product.product._id.toString() === idProduct);
+        if (cart.user.toString() === product.owner.toString()) {
+            throw new Error('You cannot add your own product to your cart');
+        }
         if (productExists) {
             throw new Error('Product already exists in cart');
         }
@@ -23,8 +35,9 @@ class CartDAO {
             product: idProduct,
             quantity: quantity
         }
-        products.push(newProduct);
-        return await modelCart.findByIdAndUpdate(idCart, { products });
+        cart.products.push(newProduct);
+        await modelCart.findByIdAndUpdate(idCart, { products: cart.products })
+        return newProduct;
     }
 
     static async deleteProductFromCart(idCart, idProduct) {
