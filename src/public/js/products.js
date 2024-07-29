@@ -1,12 +1,10 @@
-import { config } from "../../config/config";
-
 const listItemsElements = document.getElementsByClassName('product');
 const cartIdElement = document.getElementById('cartId');
 const goToCart = document.getElementById('goToCart');
 
 const createGoToCart = (id) => {
     const a = document.createElement('a');
-    a.href = `${API_URL}/carts/${id}`;
+    a.href = `/carts/${id}`;
     a.textContent = "Go to cart";
     goToCart.appendChild(a);
 }
@@ -16,10 +14,10 @@ let cartId = null;
 const createCartElement = document.createElement('button');
 createCartElement.textContent = "Create cart";
 createCartElement.addEventListener('click', () => {
-    ;
-    fetch(config.API_URL + '/api/carts', {
+    fetch('/api/carts', {
         method: 'POST'
     }).then(res => res.json()).then(data => {
+        console.log(data);
         cartId = data.message._id
         const textCartIdElement = document.createElement('h2');
         textCartIdElement.textContent = "Cart ID: " + cartId;
@@ -69,7 +67,7 @@ for (const li of listItemsElements) {
             })
             return;
         }
-        fetch(`${API_URL}/api/carts/${cartId}/product/${li.id}`, {
+        fetch(`/api/carts/${cartId}/product/${li.id}`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
